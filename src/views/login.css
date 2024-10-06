@@ -1,0 +1,96 @@
+/* login.css */
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 120px 198px;
+    position: relative;
+    background: #FFFFFF#faf9fb;
+}
+
+.login-form {
+box-sizing: border-box;
+/* width: 501px;
+height: 386px; */
+/* width:20lpx; */
+height:250px;
+
+background: #FFFFFF;
+/* border-width: 3px 5px 3px 0px;
+border-style: solid; */
+/* border-color: #AEA1A1; */
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 0px 20px 20px 0px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+    
+}
+.login-subform {
+    box-sizing: border-box;
+    width: 234px;
+    /* height: 467px; */
+    height: 250px;
+    background: #9D8989;
+    border-radius: 20px 0px 0px 20px;/* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding: 120px ;
+    
+    
+}
+.login-instructions {
+    width: 192px; /* Set width */
+    height: 217px; /* Set height */
+    box-sizing: border-box;
+    position: absolute;
+    left: 220px;
+    top: 140px;
+    object-fit: cover;
+    background: url(../views/logo.gif);
+}
+
+
+.login-input {
+    margin-bottom: 10px; /* Space between inputs */
+    margin-top: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50%; /* Full width */
+}
+
+.login-button {
+    padding: 10px;
+    background-color: hsl(59, 83%, 50%); /* Button color */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 20%; /* Full width */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+
+
+}
+/* 
+.login-button:hover {
+    position: absolute;
+
+}
+ */
+/* .item-svg{
+color:#faf9fb;
+width: 50px;
+}
+svg{
+    fill:#faf9fb;
+} */
