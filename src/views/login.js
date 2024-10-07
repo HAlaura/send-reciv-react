@@ -1,47 +1,81 @@
-import React from "react";
-
+// import React, { useState } from "react";
 import "./login.css";
 import Logo from "./logo.gif";
-import SenderProj from "./SenderProj";
-import NavComp from "../components/NavComp";
-import {Routes, Route } from 'react-router-dom';
+import React, {useState} from 'react';
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
-const links = [
-    { name: "Login", path: "/SenderProj", comp: <SenderProj /> }
-    
-    ]; 
-function Login() {
+const Login = () => {
 
+    const [username , setUsername] = useState('');
+    const [password , setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+}
+const handlepasswordChange = (e) => {
+    setPassword(e.target.value);
+}
+const handleSubmit = async(event) =>{
+    event.preventDefault();
+
+
+    try
+    {
+        
+        const response = await axios.post('http://localhost:3001/api/account/login',{
+            userName: username,
+            password: password,
+        });   
+        
+        const user= response.data;
+        console.log(user);
+        if(user && user.token){
+            localStorage.setItem('token',user.token);
+            console.log(user);
+            navigate('/SenderProj');
+        }
+        else{
+            setError('Invalid username or password');
+        }
+    }
+        catch(error){
+            console.error('Login error:',error);
+        }
+    };
     return (
         <div className="login-container">
             <div className="login-form">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label> User name:
                         <input
 
                             type="text"
-                            placeholder="Username"
-                            className="login-input" />
+                            placeholder="Enter your Username"
+                            className="login-input" 
+                            value={username}
+                            onChange={handleUsernameChange}
+                            required 
+
+                            />
                     </label>
                     <label> Password:
                         <input
                             type="password" // Added password input for better login functionality
-                            placeholder="Password"
-                            className="login-input" />
+                            placeholder="Enter your Password"
+                            className="login-input"
+                            value={password}
+                            onChange={handlepasswordChange}
+                            required
+                            
+                            />
+                            {error &&<h6 className="error-message"> {error} </h6>} 
                     </label>
-                
-                    <NavComp links={links} className="login-button"/>
-                <Routes>
-                {links.map((link) => (
-                <Route  path={link.path} element={link.comp}  />
-                
-                ))}
-                </Routes>
-                {/* <a href="/send-reciv/src/views/SenderProj.js" style={{ textDecoration: 'none' }}>
-  <button type="submit" className="login-button">Login</button>
-</a> */}
-
-                    
+                        <a href="/send-reciv/src/views/SenderProj.js" style={{ textDecoration: 'none' }}>
+                        <button type="submit" className="login-button">Login</button>
+                        </a> 
 
                 </form>
             </div>
@@ -53,13 +87,7 @@ function Login() {
 
                     className="login-instructions" // Using a class name
                 />
-                {/* <div className="item-svg"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/>
-        <g data-name="1" id="_1">
-            <path d="M441.13,166.52h-372a15,15,0,1,1,0-30h372a15,15,0,0,1,0,30Z"/>
-            <path d="M441.13,279.72h-372a15,15,0,1,1,0-30h372a15,15,0,0,1,0,30Z"/>
-            <path d="M441.13,392.92h-372a15,15,0,1,1,0-30h372a15,15,0,0,1,0,30Z"/>
-            </g></svg>
-            </div> */}
+    
             </div>
 
         </div>

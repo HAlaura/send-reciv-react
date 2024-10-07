@@ -13,7 +13,7 @@
 box-sizing: border-box;
 /* width: 501px;
 height: 386px; */
-/* width:20lpx; */
+width:100%px;
 height:250px;
 
 background: #FFFFFF;
@@ -62,17 +62,16 @@ flex-grow: 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 50%; /* Full width */
+    width: 100%; /* Full width */
 }
 
 .login-button {
     padding: 10px;
-    background-color: hsl(59, 83%, 50%); /* Button color */
+    background-color: hsl(139, 82%, 35%); /* Button color */
     color: white;
     border: none;
-    border-radius: 20px;
     cursor: pointer;
-    width: 20%; /* Full width */
+    width: 100%; /* Full width */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
