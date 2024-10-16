@@ -1,9 +1,9 @@
 import React from "react";
 
 
-function Header() {
-return (<h1>hhhh</h1>
-
-);
+function Header({title}) {
+return <div className="Header">
+    <h1>{title}</h1>
+    </div>
 }
 export default Header;
