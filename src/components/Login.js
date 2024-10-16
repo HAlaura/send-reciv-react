@@ -1,7 +1,7 @@
-// import React, { useState } from "react";
-import "./login.css";
-import Logo from "./logo.gif";
-import React, {useState} from 'react';
+ import React, { useState } from "react";
+import './login.css';
+// import Logo from "./logo.gif";
+// import React, {useState} from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
@@ -49,46 +49,44 @@ const handleSubmit = async(event) =>{
         <div className="login-container">
             <div className="login-form">
                 <form onSubmit={handleSubmit}>
-                    <label> User name:
+                    <label className="login-sys"> نظام الصادر و الوارد</label>
+                        <label className="login-msg">يرجى ادخال معلومات الحساب لاستخدام النظام</label>
                         <input
 
                             type="text"
-                            placeholder="Enter your Username"
-                            className="login-input" 
+                            placeholder="اسم المستخدم"
+                            className="login-inputu" 
                             value={username}
                             onChange={handleUsernameChange}
                             required 
 
                             />
-                    </label>
-                    <label> Password:
+                    
+                    
                         <input
                             type="password" // Added password input for better login functionality
-                            placeholder="Enter your Password"
-                            className="login-input"
+                            placeholder="كلمة المرور"
+                            className="login-inputp"
                             value={password}
                             onChange={handlepasswordChange}
                             required
                             
                             />
                             {error &&<h6 className="error-message"> {error} </h6>} 
-                    </label>
-                        <a href="/send-reciv/src/views/SenderProj.js" style={{ textDecoration: 'none' }}>
-                        <button type="submit" className="login-button">Login</button>
-                        </a> 
+{/*                
+                        <a href="/send-reciv/src/views/SenderProj.js" > */}
+                        <button type="submit" className="login-button">تسجيل دخول</button>
+                        {/* </a>  */}
 
                 </form>
             </div>
-            <div className="login-subform">
-                <img
-                    src={Logo}
-                    alt="Login Instructions"
+            <div className="img">
+            <img src="../path/to/download.png" alt="Description" />
 
-
-                    className="login-instructions" // Using a class name
-                />
-    
             </div>
+           
+    
+            
 
         </div>
     );

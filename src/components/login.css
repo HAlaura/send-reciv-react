@@ -1,0 +1,174 @@
+
+
+.login-container{/* Slide 16:9 - 11 */
+
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    
+    background: #FFFFFF;
+    }
+/* نظام الصادر و الوارد */
+.login-sys{
+position: absolute;
+left: 66.98%;
+right: 17.6%;
+top: 31.2%;
+bottom: 64.72%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+}
+/* يرجى ادخال معلومات الحساب لاستخدام النظام */
+.login-msg{
+position: absolute;
+left: 66.98%;
+right: 17.6%;
+top: 40.74%;
+bottom: 57.5%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: right;
+
+color: #848484;
+}
+
+
+
+/* Rectangle 4 */
+.login-inputu{
+position: absolute;
+width: 404px;
+height: 44px;
+left: 1232px;
+top: 518px;
+
+background: #E9E9E9;
+border-radius: 32px;
+/* اسم المستخدم */
+
+position: absolute;
+left: 79.27%;
+right: 15.83%;
+top: 49.17%;
+bottom: 49.07%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: right;
+
+color: #848484;
+
+
+
+}
+
+/* Rectangle 5 */
+.login-inputp{
+position: absolute;
+width: 404px;
+height: 44px;
+left: 1232px;
+top: 599px;
+
+background: #E9E9E9;
+border-radius: 32px;
+
+/* كلمة المرور */
+
+position: absolute;
+left: 80.52%;
+right: 15.83%;
+top: 56.39%;
+bottom: 41.85%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: right;
+
+color: #848484;
+
+
+}
+
+/* Group 35 */
+.login-button{
+position: absolute;
+width: 192px;
+height: 44px;
+left: 1338px;
+top: 721px;
+/* تسجيل دخول */
+
+position: absolute;
+left: 72.19%;
+right: 22.86%;
+top: 67.87%;
+bottom: 30.37%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+color: #FFFFFF;
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 192px;
+height: 44px;
+left: 1338px;
+top: 721px;
+
+background: #2E8698;
+border-radius: 32px;
+
+
+
+}
+.img{
+/* 2926635 1 */
+
+position: absolute;
+width: 946px;
+height: 633px;
+left: 99px;
+top: 224px;
+
+background: url(download.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
