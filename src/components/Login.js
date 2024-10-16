@@ -1,5 +1,6 @@
  import React, { useState } from "react";
 import './login.css';
+
 // import Logo from "./logo.gif";
 // import React, {useState} from 'react';
 import axios from "axios";
@@ -81,10 +82,10 @@ const handleSubmit = async(event) =>{
                 </form>
             </div>
             <div className="img">
-            <img src="../path/to/download.png" alt="Description" />
+            <img src="../aset/achive.png" alt="" />
 
             </div>
-           
+        
     
             
 
