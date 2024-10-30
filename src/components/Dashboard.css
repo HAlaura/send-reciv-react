@@ -1,0 +1,26 @@
+.dashboard {
+  display: flex;
+}
+
+
+
+.sidebar {
+  width: 250px;
+  background-color: #f3f4f6;
+  color: rgb(22, 21, 21);
+  height: calc(100vh - 98px); /* تأكد من أن هذه القيمة تتماشى مع ارتفاع الهيدر */
+  position: fixed; /* تثبيت السايد بار */
+  top: 98px; /* بدء من أسفل الهيدر */
+  right: 0; /* من اليمين */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 98px; /* ترك مسافة للهيدر */
+  margin-right: 270px; /* ترك مساحة للسايد بار */
+  padding: 20px; 
+  background-color: #f8f9fa; 
+  min-height: calc(100vh - 98px); /* ارتفاع المحتوى ليملأ الشاشة بالكامل */
+}

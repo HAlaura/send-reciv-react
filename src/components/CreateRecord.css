@@ -1,0 +1,73 @@
+/* Create Record Styles */
+.create-record {
+
+ margin-top: 60px; /* ترك مسافة للهدر */
+ margin-right: 250px; /* ترك مساحة للسايد بار */
+ padding: 20px;
+ flex-grow: 1; /* ليملأ المساحة المتبقية */
+ background-color: #f8f9fa;
+ border-radius: 8px;
+ min-height: calc(100vh - 60px);
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ direction: rtl; /* محاذاة النص من اليمين */
+ margin:  auto; /* للتوسيع التلقائي على اليمين واليسار */
+ max-width: 800px;
+ margin-top: 40px; /* ترك مسافة من الهيدر */
+}
+
+.form-row {
+  display: flex; /* استخدام flexbox لتقسيم الحقول */
+  justify-content: space-between; /* توزيع الحقول بالتساوي */
+  margin-bottom: 15px; /* مسافة بين الصفوف */
+  width: 800px;
+}
+
+.form-group {
+  flex: 1; /* تجعل كل حقل يشغل نفس المساحة */
+  margin: 0 20px; /* تقليل المسافة الجانبية */
+}
+
+.create-record h2 {
+  text-align: right;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.create-record label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.create-record input[type="text"],
+.create-record input[type="number"],
+.create-record input[type="date"],
+.create-record textarea,
+.create-record select {
+  width: 100%; /* استخدام عرض كامل للحقل */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px; /* حواف دائرية */
+  margin-bottom: 5px;
+  direction: rtl; /* اتجاه النص من اليمين إلى اليسار */
+}
+
+.create-record button {
+  width: 200px;
+  padding: 20px;
+  background-color: #2F8EA2;
+  color: white;
+  border: none;
+  border-radius: 30px; /* حواف دائرية */
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  margin-top: 20px; /* ضبط المسافة من العناصر الأخرى */
+  margin-left: auto; /* دفع الزر لليمين */
+  margin-right: auto; /* توسيط الزر */
+}
+
+.create-record button:hover {
+  background-color: #dce0e6;
+}

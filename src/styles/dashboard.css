@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    height: 100vh; /* Full height */
+}
+
+main {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease; /* Smooth transition for content */
+}
+
+.collapsed {
+    margin-left: 80px; /* Width of the collapsed sidebar */
+}
+
+.expanded {
+    margin-left: 250px; /* Width of the expanded sidebar */
+}
+
+/* Media query for responsive adjustments */
+@media (max-width: 768px) {
+    .pro-sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    main {
+        margin-left: 0; /* Adjust main content margin */
+    }
+}
+/* Dashboard.css */
+
+.dashboard {
+    display: flex; /* استخدام flexbox لتنسيق العناصر */
+}
+
+.content {
+    margin-top: 60px; /* ترك مسافة للهدر */
+    margin-right: 270px; /* ترك مساحة للسايد بار */
+    padding: 20px; /* الحشوة */
+    flex-grow: 1; /* ليملأ المساحة المتبقية */
+    background-color: #f8f9fa; /* لون الخلفية للمحتوى */
+    min-height: calc(100vh - 60px); /* ارتفاع المحتوى ليملأ الشاشة بالكامل */
+}

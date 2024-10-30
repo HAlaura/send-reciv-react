@@ -4,15 +4,16 @@
 
     position: relative;
     display: flex;
-    width: 1920px;
-    height: 1080px;
+    /* width: 1920px;
+    height: 1080px; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 100%;
-    height: 100vh; */
+    width: 100%;
+    height: 100vh;
     background: #FFFFFF;
     }
+
 /* نظام الصادر و الوارد */
 .login-sys{
 position: absolute;
@@ -43,7 +44,7 @@ bottom: 57.5%;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 12px;
 line-height: 19px;
 text-align: right;
 
@@ -55,11 +56,10 @@ color: #848484;
 /* Rectangle 4 */
 .login-inputu{
 position: absolute;
-width: 404px;
-height: 44px;
-left: 1232px;
+width: 304px;
+height: 40px;
+left: 1000px;
 top: 518px;
-
 background: #E9E9E9;
 border-radius: 32px;
 /* اسم المستخدم */
@@ -75,46 +75,41 @@ bottom: 49.07%;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 24px;
+font-size: 18px;
 line-height: 19px;
 text-align: right;
 
-color: #848484;
+color: #dad7d7;
 
-
+border: none;
 
 }
 
 /* Rectangle 5 */
 .login-inputp{
 position: absolute;
-width: 404px;
-height: 44px;
+width: 304px;
+height: 40px;
 left: 1232px;
-top: 599px;
-
+top: 60%;
 background: #E9E9E9;
 border-radius: 32px;
-
 /* كلمة المرور */
-
 position: absolute;
 /* left: 80.52%;
 right: 15.83%; */
 left: 66.98%;
-right: 17.6%;
-top: 56.39%;
+right: 50.6%;
 bottom: 41.85%;
-
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 24px;
+font-size: 18px;
 line-height: 19px;
 text-align: right;
 
-color: #848484;
-
+color: #dad7d7;
+border: none;
 
 }
 
@@ -124,9 +119,9 @@ color: #848484;
 
 position: absolute;
 width: 192px;
-height: 44px;
+height: 40px;
 left: 1338px;
-top: 721px;
+top: 521px;
 
 background: #2E8698;
 border-radius: 32px;
@@ -137,34 +132,32 @@ border-radius: 32px;
 position: absolute;
 left: 72.19%;
 right: 5%;
-top: 67.87%;
+top: 75.87%;
 bottom: 30.37%;
-
 font-family: 'Inter';
 font-style: normal;
-font-weight: 600;
+font-weight: 300;
 font-size: 20px;
 line-height: 19px;
 text-align: center;
-
 color: #FFFFFF;
-
+border: none;
 
 }
 .img{
 /* 2926635 1 */
 
 position: absolute;
-width: 946px;
-height: 633px;
-left: 99px;
+width: 590px;
+height: 333px;
+left: 100px;
 top: 224px;
 
-background: url('../aset/achive.png');
+background: url('../aset/login.png');
 
 }
 .login-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #c8cbcf; /* Darker blue on hover */
 }
 .login-inputp:hover{
     background-color:#FFFFFF;
@@ -175,6 +168,20 @@ background: url('../aset/achive.png');
 
 
 
+.sss{
+    background-color: #0056b3;
+}
+.link{
+    position: absolute;
+    left: 72.19%;
+    right: 17%;
+    top: 83.87%;
+    bottom: 30.37%;
+    direction: rtl;
+    margin-right: 40px;
+    font-size: larger;
+   
+}
 
 
 
@@ -186,4 +193,7 @@ background: url('../aset/achive.png');
 
 
 
-
+@media (max-width: 768px) {
+    .login-sys {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }}

@@ -1,0 +1,118 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 200px;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 220px; /* To account for the sidebar width */
+    padding: 20px;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Create Record Form */
+  .create-record-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-record-form label {
+    margin: 10px 0 5px;
+  }
+  
+  .create-record-form input,
+  .create-record-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .create-record-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .create-record-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Data Table */
+  .data-table-container {
+    margin-top: 20px;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Record Detail */
+  .record-detail {
+    margin-top: 20px;
+  }
+  

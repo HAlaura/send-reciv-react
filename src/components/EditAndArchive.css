@@ -1,0 +1,45 @@
+body {
+    direction: rtl; /* تحديد الاتجاه من اليمين إلى اليسار */
+  }
+  .edit-archive {
+    margin: 40px auto; /* مركز النموذج */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* مسافة بين العناصر */
+    text-align: right; /* محاذاة النص إلى اليمين */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%; /* عرض كامل */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    direction: rtl; /* محاذاة النص من اليمين */
+  }
+button {
+  padding: 10px 15px;
+  background-color: #2F8EA2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* مسافة بين الأزرار */
+}
+
+button:hover {
+  background-color: #dce0e6; /* تغيير اللون عند التمرير */
+}
+    

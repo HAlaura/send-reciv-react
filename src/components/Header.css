@@ -1,0 +1,60 @@
+
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #f3f4f6;
+    color: rgb(22, 22, 22);
+    padding: 28px;
+    direction: rtl;
+    position: fixed; /* تثبيت الهيدر */
+    top: 0; /* من أعلى */
+    left: 0; /* من اليسار */
+    right: 0; /* من اليمين */
+    z-index: 1000; /* التأكد من أن الهيدر في المقدمة */
+  }
+
+
+.logo {
+  height: 40px; /* ارتفاع اللوغو */
+  margin-right: 50px; /* دفع اللوغو لليمين */
+}
+
+
+.user {
+  height: 40px; /* ارتفاع اللوغو */
+  margin-left:auto; /* دفع اللوغو لليمين */
+  justify-content: space-between;
+  margin-left: 50px;
+}
+.logo {
+  height: 40px; /* ارتفاع اللوغو */
+  margin-right:auto; /* دفع اللوغو لليمين */
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+
+
+.header-title {
+  flex-grow: 1; /* استخدام المساحة المتاحة في الوسط */
+  text-align: center; /* محاذاة العنوان في المنتصف */
+  margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.user-info {
+  display: flex;
+  align-items: center; /* محاذاة العناصر عمودياً */
+}
+
+.user-image {
+  width: 40px; /* عرض صورة المستخدم */
+  height: 40px; /* ارتفاع صورة المستخدم */
+  border-radius: 50%; /* جعل الصورة دائرية */
+  margin-right: 10px; /* هوامش بين الصورة واسم المستخدم */
+}
+
+.user-name {
+  font-size: 16px; /* حجم خط اسم المستخدم */
+}

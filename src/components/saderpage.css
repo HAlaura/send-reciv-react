@@ -1,0 +1,68 @@
+.sader-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.sader-container h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td, th {
+    padding: 10px;
+    text-align: right; /* لضبط النص في الجهة اليمنى */
+    border: 1px solid #ccc;
+}
+
+.sader-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sader-container input,
+.sader-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sader-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2E8698;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sader-container button:hover {
+    background-color: #0056b3;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th {
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.data-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}

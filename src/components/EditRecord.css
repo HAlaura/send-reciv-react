@@ -1,0 +1,43 @@
+.create-record-form {
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    max-width: 800px; /* تحديد عرض النموذج */
+    margin: 20px auto; /* مركز النموذج في الصفحة */
+    padding: 20px; /* حشوة داخلية للنموذج */
+    border: 1px solid #ddd; /* إطار خفيف حول النموذج */
+    border-radius: 8px; /* زوايا دائرية للإطار */
+    background-color: #f9f9f9; /* لون خلفية للنموذج */
+    direction: rtl;
+  }
+  
+  .create-record-form label {
+    margin: 10px 0 5px; /* هوامش بين العناوين والفقرات */
+    font-weight: bold; /* جعل النص غامق */
+  }
+  
+  .create-record-form input,
+  .create-record-form textarea {
+    padding: 10px; /* حشوة داخلية للحقول */
+    border: 1px solid #ccc; /* إطار حول الحقول */
+    border-radius: 4px; /* زوايا دائرية للحقول */
+    font-size: 16px; /* حجم الخط */
+  }
+  
+  .create-record-form input[type="file"] {
+    padding: 0; /* إزالة الحشوة للحقول من نوع ملف */
+  }
+  
+  .create-record-form button {
+    margin-top: 20px; /* هوامش فوق الزر */
+    padding: 10px; /* حشوة داخلية للزر */
+    background-color: #007bff; /* لون خلفية الزر */
+    color: white; /* لون النص */
+    border: none; /* إزالة الإطار */
+    border-radius: 4px; /* زوايا دائرية للزر */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+  }
+  
+  .create-record-form button:hover {
+    background-color: #0056b3; /* لون الزر عند المرور */
+  }
+  

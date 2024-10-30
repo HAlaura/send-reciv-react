@@ -1,10 +1,11 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 import './login.css';
 
 // import Logo from "./logo.gif";
 // import React, {useState} from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -30,7 +31,7 @@ const handleSubmit = async(event) =>{
             userName: username,
             password: password,
         });   
-        
+
         const user= response.data;
         console.log(user);
         if(user && user.token){
@@ -50,6 +51,7 @@ const handleSubmit = async(event) =>{
         <div className="login-container">
             <div className="login-form">
                 <form onSubmit={handleSubmit}>
+        
                     <label className="login-sys"> نظام الصادر و الوارد</label>
                         <label className="login-msg">يرجى ادخال معلومات الحساب لاستخدام النظام</label>
                         <input
@@ -74,21 +76,18 @@ const handleSubmit = async(event) =>{
                             
                             />
                             {error &&<h6 className="error-message"> {error} </h6>} 
-{/*                
-                        <a href="/send-reciv/src/views/SenderProj.js" > */}
+               
+                        <a href="/send-reciv/src/components/WaredView.js" >
                         <button type="submit" className="login-button">تسجيل دخول</button>
-                        {/* </a>  */}
-
+                        </a> 
+                        <div className="link"><Link to="/dashbored">sign</Link></div>
                 </form>
+                
             </div>
             <div className="img">
-            <img src="../aset/achive.png" alt="" />
+            <img src="../assets/login.png" alt="" />
 
             </div>
-        
-    
-            
-
         </div>
     );
 }

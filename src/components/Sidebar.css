@@ -1,0 +1,56 @@
+/* Sidebar.css */
+
+.sidebar {
+  width: 250px; /* عرض السايد بار */
+  background-color: #f3f4f6; /* اللون الخلفي */
+  color: rgb(22, 21, 21); /* لون النص */
+  height: calc(100vh - 98px); /* ارتفاع كامل الصفحة ناقص ارتفاع الهدر */
+  position: fixed; /* تثبيت في الجانب */
+  top: 98px; /* بدء من أسفل الهدر */
+  right: 0; /* من اليمين */
+  padding: 25px; /* الحشو */
+  display: flex; /* استخدام flexbox لتنسيق العناصر */
+  flex-direction: column; /* ترتيب العناصر عمودياً */
+ 
+}
+
+
+
+
+
+.sidebar ul li a.active {
+  background-color: #9EE0EE; /* نفس لون hover */
+  color: rgb(19, 17, 17); /* لون النص */
+}
+
+.sidebar h2 {
+  margin: 0 0 10px; /* هوامش للعنوان */
+}
+
+.sidebar ul {
+  list-style: none; /* إزالة نقاط القائمة */
+  padding: 0; /* إزالة الحشو */
+}
+
+.sidebar ul li {
+  margin: 5px 0; /* هوامش بين العناصر */
+}
+
+.sidebar ul li a {
+  color: rgb(17, 17, 17); /* لون الروابط */
+  text-decoration: none; /* إزالة التسطير */
+  padding: 10px 10px; /* حشوة للروابط */
+  border-radius: 50px; /* زوايا مستديرة */
+  display: block; /* يجعل الرابط ككتلة كاملة */
+  transition: background-color 0.3s; /* تأثير الانتقال */
+  text-align: center;
+  font-size: smaller;
+}
+
+.sidebar ul li a:hover {
+  background-color:  #9EE0EE;/* تغيير اللون عند التمرير */
+  color: rgb(19, 17, 17); /* لون النص */
+}
+.sidebar {
+  height: calc(100vh - 60px); /* تأكد من أن هذه القيمة تتماشى مع ارتفاع الهدر */
+}

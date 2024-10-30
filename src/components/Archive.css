@@ -1,0 +1,75 @@
+.archive-container {
+   margin-top: 60px; /* ترك مسافة للهدر */
+  margin-right: 250px; /* ترك مساحة للسايد بار */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px auot;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  direction: rtl; /* لجعل النص من اليمين إلى اليسار */
+  margin-top: 40px; /* ترك مسافة من الهيدر */
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: right; /* محاذاة العنوان لليمين */
+}
+
+.search-input {
+  margin-bottom: 20px;
+  padding: 10px ;
+  width: 400px;
+ background-color: #efebeb;
+  /* border: 1px solid #ced4da; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر بين اليمين واليسار */
+  margin-bottom: 20px;
+  border: none;
+}
+
+.archive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.archive-table th,
+.archive-table td {
+  border: 0px solid #dee2e6;
+  padding: 15px;
+  text-align: right; /* محاذاة النص لليمين */
+}
+.archive-table tr{
+  border: 1px solid #ccc;
+}
+.archive-table th {
+  
+  background-color: #fbfbfb;
+  color: rgb(17, 15, 15); /* لون خلفية العناوين */
+}
+
+.archive-table tr:hover {
+  background-color: #f1f1f1; /* تأثير تظليل عند التمرير */
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #2F8EA2;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:  #2F8EA2 /* تأثير تظليل على الزر عند التمرير */
+}
+row{
+  display: flex; /* استخدام flexbox لتقسيم الحقول */
+  justify-content: space-between; /* توزيع الحقول بالتساوي */
+  margin: 8px; ; /* مسافة بين الصفوف */
+}
+
+

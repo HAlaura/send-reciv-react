@@ -1,0 +1,136 @@
+.record-detail-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  flex: content;
+  direction: rtl; /* لجعل النص من اليمين إلى اليسار */
+  margin-top: 40px; /* ترك مسافة من الهيدر */
+}
+
+
+
+.record-detail-buttons {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction:row; /* ترتيب الأزرار عموديًا */
+  gap: 10px; /* مسافة بين الأزرار */
+}
+
+.record-detail-buttons button {
+  padding: 10px;
+  width: 60px;
+  margin-left: 40px;
+  background-color: #e6e9eb;
+  color: rgb(15, 13, 13);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.record-detail-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  background-color: #9EE0EE; /* لون زر الرجوع */
+}
+
+.back-button:hover {
+  background-color: #9EE0EE; /* لون أغمق عند التحويم */
+}
+
+.record-detail-container h2 {
+  text-align:right;
+  color: #333;
+  margin-bottom: 20px; /* ترك مسافة أسفل العنوان */
+  
+}
+
+.record-detail-container p {
+  margin: 10px 0; /* مسافة بين الفقرات */
+  line-height: 1.6; /* تحسين تباعد السطور */
+}
+
+.record-detail-container {
+  padding: 20px;
+}
+
+.record-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* مسافة أسفل الأعمدة */
+}
+
+.record-info {
+  flex: 1; /* ليأخذ عمود المعلومات كل المساحة المتاحة */
+  margin-right: 20px; /* مسافة بين الأعمدة */
+}
+
+
+.record-detail-container {
+  padding: 20px;
+}
+
+.record-details {
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+  margin-bottom: 20px; /* مسافة أسفل الأعمدة */
+}
+
+.record-info {
+  flex: 1; /* يأخذ كل المساحة المتاحة */
+  margin-right: 20px; /* مسافة بين الأعمدة */
+}
+
+.pdf-viewer {
+  flex: 0 0 200px;
+  display: flex; /* لتسهيل محاذاة المحتويات */
+  display:contents; /* لتسهيل محاذاة المحتويات */
+  justify-content: flex-end; /* محاذاة إلى اليسار */
+  align-items:flex-end; /* محاذاة إلى الأعلى */
+ 
+}
+
+.record-detail-buttons {
+  flex: 0 0 10px;
+  display: flex; /* لتسهيل محاذاة المحتويات */
+  flex-direction:row; /* ترتيب الأزرار عمودياً */
+  justify-content: flex-start; /* محاذاة إلى اليسار */
+  align-items: flex-start; /* محاذاة إلى الأعلى */
+}
+
+.row{
+  display: flex; /* استخدام flexbox لتقسيم الحقول */
+  justify-content: space-between; /* توزيع الحقول بالتساوي */
+  margin: 8px; ; /* مسافة بين الصفوف */
+}
+.back-button {
+  margin-top: 10px; /* مسافة بين الأزرار وزر العودة */
+  background-color: #2F8EA2;
+  height: 40px;
+  width: 150px;
+}
+.record-value1 {
+  margin-right: 43px; /* المسافة بين العنوان والقيمة */
+}
+.record-value2 {
+  margin-right: 18px; /* المسافة بين العنوان والقيمة */
+}
+.record-value3 {
+  margin-right: 32px; /* المسافة بين العنوان والقيمة */
+}
+.record-value4 {
+  margin-right: 30px; /* المسافة بين العنوان والقيمة */
+}
+.record-value5 {
+  margin-right: 60px; /* المسافة بين العنوان والقيمة */
+}
+.record-value6 {
+  margin-right: 55px; /* المسافة بين العنوان والقيمة */
+}
+

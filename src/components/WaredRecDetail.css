@@ -1,0 +1,51 @@
+.record-detail {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* تحديد عرض أقصى */
+  }
+  
+  h2 {
+    text-align: right; /* محاذاة العنوان إلى اليمين */
+    color: #2F8EA2;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: right; /* محاذاة النص إلى اليمين */
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%; /* عرض كامل */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    direction: rtl; /* محاذاة النص من اليمين */
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #2F8EA2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* مسافة بين الأزرار */
+  }
+  
+  button:hover {
+    background-color: #dce0e6;
+  }
+  .pdf-viewer {
+    flex: 0 0 200px;
+    display: flex; /* لتسهيل محاذاة المحتويات */
+    display:contents; /* لتسهيل محاذاة المحتويات */
+    justify-content: flex-end; /* محاذاة إلى اليسار */
+    align-items:flex-end; /* محاذاة إلى الأعلى */
+   
+  }
