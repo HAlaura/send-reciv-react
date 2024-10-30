@@ -88,7 +88,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/datawared" className={isActive('/datawared') ? 'active' : ''}>
+          <Link to="/tabwared" className={isActive('/tabwared') ? 'active' : ''}>
             عرض بيانات الوارد
           </Link>
         </li>

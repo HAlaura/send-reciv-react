@@ -1,31 +1,32 @@
-
-
 import React, { useState } from 'react';
+import './CreateRecord.css';
 
 const WaredCreate = ({ addRecord }) => {
   const [formData, setFormData] = useState({
-    id: '1',
-    priority: 'سري',
-    sender: 'وزارة الصحة',
-    subject: 'لقاح',
-    notes: 'منطقة الكرخ',
-    number: '345',
-    date: '10/30/2024',
+    id: '',
+    priority: '',
+    sender: '',
+    subject: '',
+    notes: '',
+    number: '',
+    date: '',
     file: null,
   });
 
+  const [message, setMessage] = useState('');
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    const reader = new FileReader();
 
+    const reader = new FileReader();
     reader.onloadend = () => {
       setFormData({ ...formData, file: reader.result });
     };
-
     if (file) {
       reader.readAsDataURL(file);
     }
@@ -33,30 +34,31 @@ const WaredCreate = ({ addRecord }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newRecord = { ...formData, id: Date.now() }; 
+    
+    const uniqueId = Date.now();
+    const newRecord = { ...formData, id: uniqueId };
 
-    if (typeof addRecord === 'function') {
-      addRecord(newRecord);
-    } else {
-      console.error('addRecord is not a function');
-    }
+    // إضافة السجل إلى الحالة في المكون الأب
+    addRecord(newRecord);
 
-    // إعادة تعيين النموذج
+    setMessage('تم حفظ البيانات بنجاح!');
+
     setFormData({
-      id: '1',
-      priority: 'سري',
-      sender: 'وزارة الصحة',
-      subject: 'لقاح',
-      notes: 'منطقة الكرخ',
-      number: '345',
-      date: '10/30/2024',
+      id: '',
+      priority: '',
+      sender: '',
+      subject: '',
+      notes: '',
+      number: '',
+      date: '',
       file: null,
     });
   };
 
   return (
     <form onSubmit={handleSubmit} className="create-record">
-      <h2>إنشاء سجل وارد</h2>
+      {message && <div className="success-message">{message}</div>}
+      <h2>الصادر</h2>
       <div className="form-row">
         <div className="form-group">
           <label>جهة الارسال:</label>
@@ -81,6 +83,7 @@ const WaredCreate = ({ addRecord }) => {
         <div className="form-group">
           <label>الأولوية:</label>
           <select name="priority" value={formData.priority} onChange={handleChange} required>
+            <option value="">اختر الأولوية</option>
             <option value="عاجل">عاجل</option>
             <option value="سري">سري</option>
             <option value="عاجل جدا">عاجل جدا</option>
@@ -95,7 +98,7 @@ const WaredCreate = ({ addRecord }) => {
       <div className="form-row">
         <div className="form-group">
           <label>رفع ملف:</label>
-          <input type="file" onChange={handleFileChange} />
+          <input type="file" onChange={handleFileChange} required />
         </div>
         <button type="submit">إنشاء</button>
       </div>

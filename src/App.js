@@ -1,6 +1,6 @@
 
-import React from 'react';
-
+// import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 // import Sidebar from './components/Sidebar';
 // import Header from './components/Header';
@@ -23,9 +23,17 @@ import WaredArchiveDetail from './components/WaredArchiveDetail';
 import WaredManager from './components/WaredManager';
 import Layout from './components/Layout';
 
+// new wared
+
 
 const App = () => {
  
+    const [records, setRecords] = useState([]);
+  
+    const addRecord = (newRecord) => {
+      setRecords((prevRecords) => [...prevRecords, newRecord]);
+    };
+  
   return (
     
     <Router>
@@ -46,15 +54,19 @@ const App = () => {
             <Route path="/archive" element={<Archive />} />
             <Route path="/archive/:id" element={<ArchiveDetail />} />
            */warad*/
-            <Route path="/wared" element={<WaredCreate />} />
-            {/* <Route path="/tabwared" element={<DataTabWared />} /> */}
-            <Route path="/datawared" element={<DataTabWared />} />
-            <Route path="/datawared/:id" element={<WaredRecDetail />} />
-            <Route path="/archwared" element={<EditAndArchive />} />
+            {/* <Route path="/wared" element={<WaredCreate />} />
+            <Route path="/tabwared" element={<DataTabWared />} />
+            {/* <Route path="/datawared" element={<DataTabWared />} /> */}
+            <Route path="/datawared/:id" element={<WaredRecDetail />} />*/
+            <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
+        <Route path="/tabwared" element={<DataTabWared records={records} />} />
+        <Route path="/datawared/:id" element={<WaredRecDetail />} />
+            <Route path="/archwared" element={<EditAndArchive />} /> 
             <Route path="/waredarchive" element={<WaredArchive />} />
             <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
             <Route path="/waredarchive" element={<WaredManager />} />
            </Route>
+           
           </Routes>
       
     </Router>
