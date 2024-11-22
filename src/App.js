@@ -14,13 +14,11 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import WaredCreate from './components/WaredCreate';
 import DataTabWared from './components/DataTabWared';
-
+import AddArchiveRecord from './components/AddArchiveRecord';
 import './App.css';
 import WaredRecDetail from './components/WaredRecDetail';
 import EditAndArchive from './components/EditAndArchive';
-import WaredArchive from './components/WaredArchive';
 import WaredArchiveDetail from './components/WaredArchiveDetail';
-import WaredManager from './components/WaredManager';
 import Layout from './components/Layout';
 
 // new wared
@@ -51,7 +49,9 @@ const App = () => {
             <Route path="/datatable" element={<DataTablee />} />
             <Route path="/record/:id" element={<RecordDetail />} />
             <Route path="/edit/:id" element={<EditRecord />} />
+
             <Route path="/archive" element={<Archive />} />
+            <Route path="/add-archive" element={<AddArchiveRecord />} />
             <Route path="/archive/:id" element={<ArchiveDetail />} />
            */warad*/
             {/* <Route path="/wared" element={<WaredCreate />} />
@@ -62,9 +62,8 @@ const App = () => {
         <Route path="/tabwared" element={<DataTabWared records={records} />} />
         <Route path="/datawared/:id" element={<WaredRecDetail />} />
             <Route path="/archwared" element={<EditAndArchive />} /> 
-            <Route path="/waredarchive" element={<WaredArchive />} />
             <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
-            <Route path="/waredarchive" element={<WaredManager />} />
+    
            </Route>
            
           </Routes>

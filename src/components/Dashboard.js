@@ -1,11 +1,16 @@
+
 import React from 'react';
+
 import './Dashboard.css'; // تأكد من تضمين التنسيقات الصحيحة
 import './Sidebar.css'; // تضمين التنسيقات الخاصة بالسايد بار
 import './Header.css'
 import Sidebar from "./Sidebar";
 import Header from './Header';
+// import { useAuth } from './AuthContext'; // استيراد السياق
+// import { Navigate } from 'react-router-dom';
 
 const Dashboard = () => {
+
     return (
         <div className="dashboard">
             <Header/>
