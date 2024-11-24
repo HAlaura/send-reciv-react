@@ -113,7 +113,6 @@
 //
 import { useNavigate, useLocation } from 'react-router-dom';
 import './WaredRecDetail.css';
-import PdfViewer from './PdfViewer';
 
 const WaredRecDetail = () => {
   const location = useLocation();
@@ -126,17 +125,17 @@ const WaredRecDetail = () => {
 
   const handleDelete = () => {
     if (window.confirm('هل تريد حذف هذا السجل؟')) {
-      // منطق حذف السجل هنا
-      alert('تم حذف السجل!'); 
-      navigate('/tabwared'); // العودة إلى صفحة البيانات
+      alert('تم حذف السجل!');
+      navigate('/tabwared');
     }
   };
 
   const handleArchive = () => {
-    // منطق الأرشفة هنا
-    alert('تم أرشفة السجل بنجاح!'); 
-    navigate('/tabwared'); // العودة إلى صفحة البيانات
+    alert('تم أرشفة السجل بنجاح!');
+    navigate('/tabwared');
   };
+
+
 
   const handleEdit = (e) => {
     e.preventDefault();
@@ -144,6 +143,18 @@ const WaredRecDetail = () => {
     alert('تم تعديل السجل بنجاح!'); 
     navigate('/tabwared'); // العودة إلى صفحة البيانات
   };
+  const handleOpenPdf = () => {
+    if (record.file) {
+      window.open(record.file, '_blank'); // فتح الـ PDF في نافذة جديدة
+     
+      
+      // إضافة عملية التحديث أو إعادة تحميل الصفحة بعد فتح الملف
+      window.location.reload(); // هذا سيقوم بإعادة تحميل الصفحة
+    } else {
+      alert('لا يوجد ملف PDF لفتح');
+    }
+  };
+  
 
   return (
     <div className="record-detail" style={{ direction: 'rtl' }}>
@@ -167,9 +178,14 @@ const WaredRecDetail = () => {
           <button className="back-button" onClick={() => navigate(-1)}>الــــرجوع</button>
         </div>
 
-        <div className="pdf-viewer">
+        {/* <div className="pdf-viewer">
           {record.file && <PdfViewer pdfUrl={record.file} />}
-        </div>
+        </div> */}
+        <button onClick={handleOpenPdf} className="open-pdf-button">
+  فتح الـ PDF
+</button>
+
+  
       </div>
     </div>
   );

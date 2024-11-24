@@ -509,7 +509,7 @@
 // export default Archive;
 //get
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PdfViewer from './PdfViewer';
 import './Archive.css';
@@ -578,9 +578,9 @@ const Archive = () => {
   return (
     <div className="archive-container">
       <h2>الأرشيف</h2>
-      <Link to="/add-archive">
+      {/* <Link to="/add-archive">
         <button>إضافة سجل جديد</button>
-      </Link>
+      </Link> */}
 
       <div className="search-container">
         <input

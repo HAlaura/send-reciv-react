@@ -36,8 +36,8 @@ color: #000000;
 /* يرجى ادخال معلومات الحساب لاستخدام النظام */
 .login-msg{
 position: absolute;
-left: 66.98%;
-right: 16%;
+left: 50.98%;
+right: 18%;
 top: 40.74%;
 bottom: 57.5%;
 
@@ -60,8 +60,8 @@ width: 304px;
 height: 40px;
 left: 1000px;
 top: 518px;
-background: #E9E9E9;
-border-radius: 32px;
+background:#E9E9E9;
+border-radius: 50px;
 /* اسم المستخدم */
 
 position: absolute;
@@ -78,11 +78,8 @@ font-weight: 400;
 font-size: 18px;
 line-height: 19px;
 text-align: right;
-
-color: #dad7d7;
-
+color: #e9e5e5;
 border: none;
-
 }
 
 /* Rectangle 5 */
@@ -93,7 +90,7 @@ height: 40px;
 left: 1232px;
 top: 60%;
 background: #E9E9E9;
-border-radius: 32px;
+border-radius: 50px;
 /* كلمة المرور */
 position: absolute;
 /* left: 80.52%;
@@ -108,7 +105,7 @@ font-size: 18px;
 line-height: 19px;
 text-align: right;
 
-color: #dad7d7;
+color: #e9e5e5;
 border: none;
 
 }
@@ -130,8 +127,8 @@ border-radius: 32px;
 /* تسجيل دخول */
 
 position: absolute;
-left: 72.19%;
-right: 5%;
+left: 70.2%;
+right: 15.6%;
 top: 75.87%;
 bottom: 30.37%;
 font-family: 'Inter';
@@ -173,25 +170,15 @@ background: url('../aset/login.png');
 }
 .link{
     position: absolute;
-    left: 72.19%;
-    right: 17%;
+    left: 73%;
+    right: 19%;
     top: 83.87%;
     bottom: 30.37%;
     direction: rtl;
     margin-right: 40px;
     font-size: larger;
-   
+
 }
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
     .login-sys {

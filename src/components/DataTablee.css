@@ -4,13 +4,13 @@
   margin-right: 250px; /* ترك مساحة للسايد بار */
   padding: 20px;
   flex-grow: 1; /* ليملأ المساحة المتبقية */
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-radius: 8px;
   min-height: calc(100vh - 60px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   direction: rtl; /* محاذاة النص من اليمين */
   margin:  auto; /* للتوسيع التلقائي على اليمين واليسار */
-  max-width: 800px;
+  max-width: 1000px;
   margin-top: 40px; /* ترك مسافة من الهيدر */
 }
 

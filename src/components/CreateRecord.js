@@ -1015,7 +1015,7 @@ const CreateRecord = () => {
         </div>
       </div>
       <div className="form-row">
-        <div className="form-group">
+        <div className="form-group-file">
           <label>رفع ملف:</label>
           <input type="file" onChange={handleFileChange} required />
         </div>

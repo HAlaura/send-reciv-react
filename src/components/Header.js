@@ -3,7 +3,7 @@ import './Header.css';
 import log from '../aset/log.png'; // استبدل بالمسار الصحيح للصورة
 import user from '../aset/user.svg'; // استبدل بالمسار الصحيح للصورة
 
-const Header = ({ userName }) => {
+const Header = ({ username }) => {
   return (
     <header className="header">
       <img src={log} alt="Logo" className="logo" />
@@ -11,7 +11,7 @@ const Header = ({ userName }) => {
       <div className="user-info">
         {/* يمكنك إضافة صورة المستخدم هنا إذا لزم الأمر */}
         {/* <img src={userImage} alt="User" className="user-image" /> */}
-        <span className="user-name"> لورا حسين{userName}</span>
+        <span className="user-name">مرحبًا{username}</span>
       </div>
       
       <img src={user} alt="Logo" className="user" />

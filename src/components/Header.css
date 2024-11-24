@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    background-color: #f3f4f6;
+    background-color:  #fcf8f8;
     color: rgb(22, 22, 22);
     padding: 28px;
     direction: rtl;
@@ -13,6 +13,7 @@
     left: 0; /* من اليسار */
     right: 0; /* من اليمين */
     z-index: 1000; /* التأكد من أن الهيدر في المقدمة */
+    height: 60px;
   }
 
 
@@ -26,13 +27,13 @@
   height: 40px; /* ارتفاع اللوغو */
   margin-left:auto; /* دفع اللوغو لليمين */
   justify-content: space-between;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 .logo {
   height: 40px; /* ارتفاع اللوغو */
   margin-right:auto; /* دفع اللوغو لليمين */
   justify-content: space-between;
-  margin-right: 50px;
+  margin-right: 100px;
 }
 
 
