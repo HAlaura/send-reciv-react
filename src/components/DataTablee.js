@@ -473,20 +473,20 @@
 //     fetchRecords();
 //   }, []);
 
-//   function translateUrgency(urgency) {
-//     switch(urgency) {
-//       case 'very urgent':
-//         return 'عاجل جدا';
-//       case 'urgent':
-//         return 'عاجل';
-//       case 'normal':
-//         return 'عادي';
-//       case 'secret':
-//         return 'سري';
-//       default:
-//         return urgency;  // If urgency is unknown or not specified
-//     }
-//   }
+  // function translateUrgency(urgency) {
+  //   switch(urgency) {
+  //     case 'very urgent':
+  //       return 'عاجل جدا';
+  //     case 'urgent':
+  //       return 'عاجل';
+  //     case 'normal':
+  //       return 'عادي';
+  //     case 'secret':
+  //       return 'سري';
+  //     default:
+  //       return urgency;  // If urgency is unknown or not specified
+  //   }
+  // }
 
 //   const handleSearch = (e) => {
 //     setSearchTerm(e.target.value.toLowerCase());
@@ -642,6 +642,20 @@ const DataTablee = () => {
 
     fetchRecords();
   }, []);
+  function translateUrgency(urgency) {
+    switch(urgency) {
+      case 'very urgent':
+        return 'عاجل جدا';
+      case 'urgent':
+        return 'عاجل';
+      case 'normal':
+        return 'عادي';
+      case 'secret':
+        return 'سري';
+      default:
+        return urgency;  // If urgency is unknown or not specified
+    }
+  }
 
   const handleRowClick = (pdfUrl) => {
     if (pdfUrl) {
@@ -702,7 +716,7 @@ const DataTablee = () => {
       }
     }
   };
-
+  
   const handleShowAll = () => {
     setSearchTerm('');
     setDataList(allRecords);
@@ -758,7 +772,7 @@ const DataTablee = () => {
                 onClick={() => handleRowClick(data.file)}
                 className="clickable-row"
               >
-                <td>{data.urgency}</td>
+                <td>{translateUrgency(data.urgency)}</td>
                 <td>{data.sender}</td>
                 <td>{data.title}</td>
                 <td>{data.notes}</td>
