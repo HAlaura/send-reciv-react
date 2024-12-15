@@ -1,38 +1,11 @@
-/* Sidebar.css */
-
-.sidebar {
-  width: 250px; /* عرض السايد بار */
-  background-color:  #fcf8f8;/* اللون الخلفي */
-  color: rgb(22, 21, 21); /* لون النص */
-  height: calc(100vh - 98px); /* ارتفاع كامل الصفحة ناقص ارتفاع الهدر */
-  position: fixed; /* تثبيت في الجانب */
-  top: 98px; /* بدء من أسفل الهدر */
-  right: 0; /* من اليمين */
-  padding: 25px; /* الحشو */
-  display: flex; /* استخدام flexbox لتنسيق العناصر */
-  flex-direction: column; /* ترتيب العناصر عمودياً */
- 
-}
-
-
-.sidebar ul li a.active {
-  background-color: #9EE0EE; /* نفس لون hover */
-  color: rgb(19, 17, 17); /* لون النص */
-}
-
-.sidebar h2 {
-  margin: 0 0 10px; /* هوامش للعنوان */
-}
-
+/* إعداد خصائص الرابط */
 .sidebar ul {
-  list-style: none; /* إزالة نقاط القائمة */
-  padding: 0; /* إزالة الحشو */
+  list-style-type: none; /* إزالة التنقيط */
+  padding: 0; /* إزالة الحشوة التلقائية */
+  margin: 0; /* إزالة الهوامش التلقائية */
 }
 
-.sidebar ul li {
-  margin: 5px 0; /* هوامش بين العناصر */
-}
-
+/* إعداد خصائص الرابط */
 .sidebar ul li a {
   color: rgb(17, 17, 17); /* لون الروابط */
   text-decoration: none; /* إزالة التسطير */
@@ -40,14 +13,42 @@
   border-radius: 50px; /* زوايا مستديرة */
   display: block; /* يجعل الرابط ككتلة كاملة */
   transition: background-color 0.3s; /* تأثير الانتقال */
-  text-align: center;
+  text-align: right; /* محاذاة النص لليمين */
   font-size: smaller;
+  display: flex; /* استخدام flexbox */
+  align-items: center; /* محاذاة العناصر في المنتصف */
+  justify-content: space-between; /* توزيع العناصر بشكل مناسب */
+  margin-bottom: 10px; /* إضافة مسافة بين الروابط */
 }
 
-.sidebar ul li a:hover {
-  background-color:  #9EE0EE;/* تغيير اللون عند التمرير */
+/* إضافة المسافة بين النص والأيقونة في الرابط */
+.link-content {
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر بشكل مناسب */
+  align-items: center; /* محاذاة العناصر عمودياً */
+  width: 100%; /* التأكد من أن المساحة تغطي العرض الكامل */
+}
+
+/* تحديد الأيقونة */
+.sidebar .icon {
+  width: 20px; /* تحديد حجم الأيقونة */
+  height: 20px;
+  margin-left: 10px; /* مسافة بين النص والأيقونة */
+}
+
+/* إذا كان الرابط نشطًا */
+.sidebar ul li a.active {
+  background-color: #9EE0EE; /* نفس لون hover */
   color: rgb(19, 17, 17); /* لون النص */
 }
-.sidebar {
-  height: calc(100vh - 60px); /* تأكد من أن هذه القيمة تتماشى مع ارتفاع الهدر */
+
+/* تغيير اللون عند التمرير */
+.sidebar ul li a:hover {
+  background-color:  #9EE0EE; /* تغيير اللون عند التمرير */
+  color: rgb(19, 17, 17); /* لون النص */
+}
+
+/* التأثير على الأيقونة عند تفعيل الرابط */
+.sidebar a.active .icon {
+  transform: rotate(180deg); /* تدوير الأيقونة عند تفعيل الرابط */
 }

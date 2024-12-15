@@ -466,7 +466,7 @@ const DataTabWared = () => {
   const [records, setRecords] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 5;
+  const recordsPerPage = 3;
   const [allRecords, setAllRecords] = useState([]);
 
   // تحميل السجلات من localStorage عند تحميل الصفحة

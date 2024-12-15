@@ -648,7 +648,7 @@ const Archive = () => {
   const [loading, setLoading] = useState(true);  // حالة التحميل
   const [error, setError] = useState('');  // حالة الخطأ
   const [currentPage, setCurrentPage] = useState(1);  // الصفحة الحالية
-  const recordsPerPage = 5;  // عدد السجلات في كل صفحة
+  const recordsPerPage = 3;  // عدد السجلات في كل صفحة
 
   useEffect(() => {
     const fetchArchivedRecords = async () => {

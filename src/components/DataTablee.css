@@ -2,15 +2,13 @@
 .data-table-container {
   margin-top: 60px; /* ترك مسافة للهدر */
   margin-right: 250px; /* ترك مساحة للسايد بار */
-  padding: 20px;
-  flex-grow: 1; /* ليملأ المساحة المتبقية */
   background-color: #ffffff;
   border-radius: 8px;
-  min-height: calc(100vh - 60px);
+  padding: 20px auot;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  direction: rtl; /* محاذاة النص من اليمين */
-  margin:  auto; /* للتوسيع التلقائي على اليمين واليسار */
+  margin: 20px auto;
   max-width: 1000px;
+  direction: rtl; /* لجعل النص من اليمين إلى اليسار */
   margin-top: 40px; /* ترك مسافة من الهيدر */
 }
 

@@ -623,7 +623,7 @@ const DataTablee = () => {
   const [allRecords, setAllRecords] = useState([]); // جميع السجلات من الـ API
   const [searchTerm, setSearchTerm] = useState(''); // كلمة البحث
   const [currentPage, setCurrentPage] = useState(1); // الصفحة الحالية
-  const recordsPerPage = 5; // عدد السجلات في كل صفحة
+  const recordsPerPage = 3; // عدد السجلات في كل صفحة
 
   useEffect(() => {
     const fetchRecords = async () => {
@@ -656,7 +656,7 @@ const DataTablee = () => {
         return urgency;  // If urgency is unknown or not specified
     }
   }
-
+  
   const handleRowClick = (pdfUrl) => {
     if (pdfUrl) {
       const link = document.createElement('a');
