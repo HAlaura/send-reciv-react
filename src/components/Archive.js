@@ -508,17 +508,147 @@
 
 // export default Archive;
 //get
+// import React, { useEffect, useState } from 'react';
+
+// import axios from 'axios';
+// import PdfViewer from './PdfViewer';
+// import './Archive.css';
+
+// const Archive = () => {
+//   const [archivedRecords, setArchivedRecords] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState('');
+
+//   useEffect(() => {
+//     const fetchArchivedRecords = async () => {
+//       setLoading(true);
+//       try {
+//         const response = await axios.get('https://mary.pythonanywhere.com/archive/', {
+//           headers: {
+//             accept: 'application/json',
+//           },
+//         });
+//         setArchivedRecords(response.data);
+//       } catch (error) {
+//         console.error('Error fetching archived records:', error);
+//         setError('فشل في جلب السجلات المؤرشفة. يرجى المحاولة مرة أخرى.');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchArchivedRecords();
+//   }, []);
+
+ 
+//   const filteredRecords = archivedRecords.filter(record =>
+//     Object.values(record).some(value =>
+//       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+//     )
+//   );
+//   function translateUrgency(urgency) {
+//     switch(urgency) {
+//       case 'very urgent':
+//         return 'عاجل جدا';
+//         case 'urgent':
+//           return 'عاجل';
+//           case 'normal':
+//         return 'عادي';
+//         case 'secret':
+//         return 'سري';
+
+//       default:
+//         return urgency;  // إذا كانت القيمة غير معروفة أو غير محددة
+//     }
+//   }
+
+//   return (
+//     <div className="archive-container">
+//       <h2>الأرشيف</h2>
+//       {/* <Link to="/add-archive">
+//         <button>إضافة سجل جديد</button>
+//       </Link> */}
+
+//       <div className="search-container">
+//         <input
+//           type="text"
+//           placeholder="ابحث في السجلات..."
+//           value={searchTerm}
+//           onChange={(e) => setSearchTerm(e.target.value)}
+//           className="search-input"
+//         />
+//       </div>
+//       {loading ? (
+//         <p>جاري التحميل...</p>
+//       ) : error ? (
+//         <p style={{ color: 'red' }}>{error}</p>
+//       ) : (
+//         <>
+//           <p>عدد السجلات: {filteredRecords.length}</p>
+//           {filteredRecords.length > 0 ? (
+//             <table className="archive-table">
+//               <thead>
+//                 <tr>
+//                 <th>الاولوية</th>
+//                   <th>العنوان</th>
+//                   <th>جهة الإرسال</th>
+//                   <th>تاريخ الأرشفة</th>
+//                   <th>العدد</th>
+//                   <th>الملاحظات</th>
+//                   <th>الإجراءات</th>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {filteredRecords.map((record) => (
+//                   <tr key={record.id}>
+//                     <td>{translateUrgency(record.urgency)}</td>
+//                     <td>{record.title}</td>
+//                     <td>{record.sender}</td>
+//                     <td>{new Date(record.archived_at).toLocaleDateString('en-GB')}</td>
+//                     <td>{record.number}</td>
+//                     <td>{record.notes}</td>
+//                     <td>
+//                     <div className="pdf-viewer">
+//           {/* {record.file && <PdfViewer pdfUrl={record.file} />} */}
+
+//            {/* تأكد من استخدام الرابط الكامل للملف */}
+//            {record.file && (
+//                           <PdfViewer pdfUrl={`https://mary.pythonanywhere.com${record.file}`} />
+//                         )}
+//         </div>
+                      
+//                     </td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+//           ) : (
+//             <p>لا توجد سجلات مؤرشفة لعرضها.</p>
+//           )}
+//         </>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Archive;
+//  15/12/2024
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PdfViewer from './PdfViewer';
+import Sidebar from './Sidebar'; // تأكد من أنك تستورد Sidebar بشكل صحيح
 import './Archive.css';
 
 const Archive = () => {
-  const [archivedRecords, setArchivedRecords] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [archivedRecords, setArchivedRecords] = useState([]);  // السجلات المستلمة من API
+  const [searchTerm, setSearchTerm] = useState('');  // كلمة البحث
+  const [dataList, setDataList] = useState([]);  // البيانات المعروضة حالياً
+  const [allRecords, setAllRecords] = useState([]);  // جميع السجلات من الـ API
+  const [loading, setLoading] = useState(true);  // حالة التحميل
+  const [error, setError] = useState('');  // حالة الخطأ
+  const [currentPage, setCurrentPage] = useState(1);  // الصفحة الحالية
+  const recordsPerPage = 5;  // عدد السجلات في كل صفحة
 
   useEffect(() => {
     const fetchArchivedRecords = async () => {
@@ -530,6 +660,8 @@ const Archive = () => {
           },
         });
         setArchivedRecords(response.data);
+        setAllRecords(response.data);  // تخزين السجلات كاملة هنا
+        setDataList(response.data);  // تخزين السجلات المعروضة حالياً
       } catch (error) {
         console.error('Error fetching archived records:', error);
         setError('فشل في جلب السجلات المؤرشفة. يرجى المحاولة مرة أخرى.');
@@ -541,68 +673,95 @@ const Archive = () => {
     fetchArchivedRecords();
   }, []);
 
-  // const handleDelete = async (id) => {
-  //   if (window.confirm('هل تريد حذف هذا السجل؟')) {
-  //     try {
-  //       await axios.delete(`https://mary.pythonanywhere.com/archive/${id}/`);
-  //       setArchivedRecords(archivedRecords.filter(record => record.id !== id));
-  //       alert('تم حذف السجل بنجاح!');
-  //     } catch (error) {
-  //       console.error('Error deleting record:', error);
-  //       setError('فشل في حذف السجل. يرجى المحاولة مرة أخرى.');
-  //     }
-  //   }
-  // };
+  // دالة البحث
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+    const filtered = allRecords.filter((record) =>
+      Object.values(record).some((value) =>
+        value.toString().toLowerCase().includes(e.target.value.toLowerCase())
+      )
+    );
+    setDataList(filtered);
+    setCurrentPage(1);  // إعادة الصفحة إلى الأولى عند التصفية
+  };
 
+  // دالة عرض جميع السجلات
+  const handleShowAll = () => {
+    setSearchTerm('');
+    setDataList(allRecords);  // إعادة عرض جميع السجلات
+    setCurrentPage(1);  // إعادة الصفحة إلى 1
+  };
+
+  // تصفية السجلات بناءً على البحث
   const filteredRecords = archivedRecords.filter(record =>
     Object.values(record).some(value =>
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
+
+  // حساب السجلات المعروضة في الصفحة الحالية
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = dataList.slice(indexOfFirstRecord, indexOfLastRecord);
+
+  // دالة الترجمة للأولوية
   function translateUrgency(urgency) {
-    switch(urgency) {
+    switch (urgency) {
       case 'very urgent':
         return 'عاجل جدا';
-        case 'urgent':
-          return 'عاجل';
-          case 'normal':
+      case 'urgent':
+        return 'عاجل';
+      case 'normal':
         return 'عادي';
-        case 'secret':
+      case 'secret':
         return 'سري';
-
       default:
-        return urgency;  // إذا كانت القيمة غير معروفة أو غير محددة
+        return urgency;
     }
   }
 
+  // التنقل بين الصفحات (السابق / اللاحق)
+  const handleNextPage = () => {
+    if (indexOfLastRecord < filteredRecords.length) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (indexOfFirstRecord > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <div className="archive-container">
+      <Sidebar totalArchivedRecords={filteredRecords.length} /> {/* تمرير عدد السجلات المؤرشفة */}
+      
       <h2>الأرشيف</h2>
-      {/* <Link to="/add-archive">
-        <button>إضافة سجل جديد</button>
-      </Link> */}
 
       <div className="search-container">
-        <input
+      <input
           type="text"
-          placeholder="ابحث في السجلات..."
+          placeholder="بحث عن جميع الحقول..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
+          onChange={handleSearch}
         />
+         <button className="show-all-button" onClick={handleShowAll}>
+          عرض الكل
+        </button>
       </div>
+
       {loading ? (
         <p>جاري التحميل...</p>
       ) : error ? (
         <p style={{ color: 'red' }}>{error}</p>
       ) : (
         <>
-          <p>عدد السجلات: {filteredRecords.length}</p>
-          {filteredRecords.length > 0 ? (
+          {currentRecords.length > 0 ? (
             <table className="archive-table">
               <thead>
                 <tr>
-                <th>الاولوية</th>
+                  <th>الاولوية</th>
                   <th>العنوان</th>
                   <th>جهة الإرسال</th>
                   <th>تاريخ الأرشفة</th>
@@ -612,7 +771,7 @@ const Archive = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredRecords.map((record) => (
+                {currentRecords.map((record) => (
                   <tr key={record.id}>
                     <td>{translateUrgency(record.urgency)}</td>
                     <td>{record.title}</td>
@@ -621,20 +780,11 @@ const Archive = () => {
                     <td>{record.number}</td>
                     <td>{record.notes}</td>
                     <td>
-                    <div className="pdf-viewer">
-          {/* {record.file && <PdfViewer pdfUrl={record.file} />} */}
-
-           {/* تأكد من استخدام الرابط الكامل للملف */}
-           {record.file && (
+                      <div className="pdf-viewer">
+                        {record.file && (
                           <PdfViewer pdfUrl={`https://mary.pythonanywhere.com${record.file}`} />
                         )}
-        </div>
-                      {/* <Link to={`/archive/${record.id}`}>
-                        <button>عرض التفاصيل</button>
-                      </Link>
-                      <button onClick={() => handleDelete(record.id)} style={{ marginLeft: '10px', color: 'red' }}>
-                        حذف
-                      </button> */}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -643,6 +793,15 @@ const Archive = () => {
           ) : (
             <p>لا توجد سجلات مؤرشفة لعرضها.</p>
           )}
+
+          <div className="pagination">
+            <button onClick={handlePrevPage} disabled={currentPage === 1}>
+              السابق
+            </button>
+            <button onClick={handleNextPage} disabled={indexOfLastRecord >= filteredRecords.length}>
+              التالي
+            </button>
+          </div>
         </>
       )}
     </div>

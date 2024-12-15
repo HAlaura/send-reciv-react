@@ -99,3 +99,11 @@
 .show-all-button:hover {
   background-color:  #2F8EA2; /* لون أغمق عند التمرير */
 }
+/* في ملف CSS الخاص بك */
+.clickable-row {
+  cursor: pointer; /* تغيير المؤشر إلى يد عند المرور */
+}
+
+.clickable-row:hover {
+  background-color: #f0f0f0; /* تغيير الخلفية عند المرور */
+}

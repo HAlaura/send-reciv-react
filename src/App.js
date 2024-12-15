@@ -1,14 +1,144 @@
 
-// import React from 'react';
+// // import React from 'react';
+// import React, { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+// // import Sidebar from './components/Sidebar';
+// // import Header from './components/Header';
+// import CreateRecord from './components/CreateRecord';
+// import DataTablee from './components/DataTablee';
+// import RecordDetail from './components/RecordDetail';
+// import EditRecord from './components/EditRecord'; // صفحة التعديل
+// import Archive from './components/Archive'; // صفحة الأرشيف
+// import ArchiveDetail from './components/ArchiveDetail';
+// import Dashboard from './components/Dashboard';
+// import Login from './components/Login';
+// import WaredCreate from './components/WaredCreate';
+// import DataTabWared from './components/DataTabWared';
+// import AddArchiveRecord from './components/AddArchiveRecord';
+// import './App.css';
+// import WaredRecDetail from './components/WaredRecDetail';
+// import EditAndArchive from './components/EditAndArchive';
+// import WaredArchiveDetail from './components/WaredArchiveDetail';
+// import Layout from './components/Layout';
+
+// // new wared
+
+
+// const App = () => {
+ 
+//     const [records, setRecords] = useState([]);
+  
+//     const addRecord = (newRecord) => {
+//       setRecords((prevRecords) => [...prevRecords, newRecord]);
+//     };
+  
+//   return (
+    
+//     <Router>
+    
+//       {/* <div className="app-container">
+//         <Sidebar />
+//         <div className="main-content">
+//           <Header /> */}
+           
+//           <Routes>
+//           <Route path="/" element={<Login/>} />
+//           <Route element={<Layout/>}>
+//           <Route path="/dashbored" element={<Dashboard />} />
+//             <Route path="/create" element={<CreateRecord />} />
+//             <Route path="/datatable" element={<DataTablee />} />
+//             <Route path="/record/:id" element={<RecordDetail />} />
+//             <Route path="/edit/:id" element={<EditRecord />} />
+
+//             <Route path="/archive" element={<Archive />} />
+//             <Route path="/add-archive" element={<AddArchiveRecord />} />
+//             <Route path="/archive/:id" element={<ArchiveDetail />} />
+//            */warad*/
+//             {/* <Route path="/wared" element={<WaredCreate />} />
+//             <Route path="/tabwared" element={<DataTabWared />} />
+//             {/* <Route path="/datawared" element={<DataTabWared />} /> */}
+//             <Route path="/datawared/:id" element={<WaredRecDetail />} />*/
+//             <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
+//         <Route path="/tabwared" element={<DataTabWared records={records} />} />
+//         <Route path="/datawared/:id" element={<WaredRecDetail />} />
+//             <Route path="/archwared" element={<EditAndArchive />} /> 
+//             <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
+    
+//            </Route>
+           
+//           </Routes>
+      
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+//12/12/2024
+// import React, { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import CreateRecord from './components/CreateRecord';
+// import DataTablee from './components/DataTablee';
+// import RecordDetail from './components/RecordDetail';
+// import EditRecord from './components/EditRecord'; // صفحة التعديل
+// import Archive from './components/Archive'; // صفحة الأرشيف
+// import ArchiveDetail from './components/ArchiveDetail';
+// import Dashboard from './components/Dashboard';
+// import Login from './components/Login';
+// import WaredCreate from './components/WaredCreate';
+// import DataTabWared from './components/DataTabWared';
+// import AddArchiveRecord from './components/AddArchiveRecord';
+// import './App.css';
+// import WaredRecDetail from './components/WaredRecDetail';
+// import EditAndArchive from './components/EditAndArchive';
+// import WaredArchiveDetail from './components/WaredArchiveDetail';
+// import Layout from './components/Layout';
+
+// const App = () => {
+//   const [records, setRecords] = useState([]);
+//   const [totalWaredRecords, setTotalWaredRecords] = useState(0); // إضافة حالة لتخزين عدد سجلات الوارد
+
+//   const addRecord = (newRecord) => {
+//     setRecords((prevRecords) => [...prevRecords, newRecord]);
+//   };
+
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Login />} />
+//         <Route element={<Layout />}>
+//           <Route path="/dashbored" element={<Dashboard />} />
+//           <Route path="/create" element={<CreateRecord />} />
+//           <Route path="/datatable" element={<DataTablee />} />
+//           <Route path="/record/:id" element={<RecordDetail />} />
+//           <Route path="/edit/:id" element={<EditRecord />} />
+//           <Route path="/archive" element={<Archive />} />
+//           <Route path="/add-archive" element={<AddArchiveRecord />} />
+//           <Route path="/archive/:id" element={<ArchiveDetail />} />
+          
+//           {/* تمرير totalWaredRecords إلى Sidebar */}
+//           <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
+//           <Route
+//             path="/tabwared"
+//             element={<DataTabWared records={records} setTotalWaredRecords={setTotalWaredRecords} />}
+//           />
+//           <Route path="/datawared/:id" element={<WaredRecDetail />} />
+//           <Route path="/archwared" element={<EditAndArchive />} />
+//           <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
+//         </Route>
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export default App;
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-// import Sidebar from './components/Sidebar';
-// import Header from './components/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreateRecord from './components/CreateRecord';
 import DataTablee from './components/DataTablee';
 import RecordDetail from './components/RecordDetail';
-import EditRecord from './components/EditRecord'; // صفحة التعديل
-import Archive from './components/Archive'; // صفحة الأرشيف
+import EditRecord from './components/EditRecord';
+import Archive from './components/Archive';
 import ArchiveDetail from './components/ArchiveDetail';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
@@ -21,58 +151,45 @@ import EditAndArchive from './components/EditAndArchive';
 import WaredArchiveDetail from './components/WaredArchiveDetail';
 import Layout from './components/Layout';
 
-// new wared
-
-
 const App = () => {
- 
-    const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([]);
+  const [totalWaredRecords, setTotalWaredRecords] = useState(0); // حالة لتخزين عدد سجلات الوارد
   
-    const addRecord = (newRecord) => {
-      setRecords((prevRecords) => [...prevRecords, newRecord]);
-    };
-  
-  return (
-    
-    <Router>
-    
-      {/* <div className="app-container">
-        <Sidebar />
-        <div className="main-content">
-          <Header /> */}
-           
-          <Routes>
-          <Route path="/" element={<Login/>} />
-          <Route element={<Layout/>}>
-          <Route path="/dashbored" element={<Dashboard />} />
-            <Route path="/create" element={<CreateRecord />} />
-            <Route path="/datatable" element={<DataTablee />} />
-            <Route path="/record/:id" element={<RecordDetail />} />
-            <Route path="/edit/:id" element={<EditRecord />} />
+  const addRecord = (newRecord) => {
+    setRecords((prevRecords) => [...prevRecords, newRecord]);
+  };
 
-            <Route path="/archive" element={<Archive />} />
-            <Route path="/add-archive" element={<AddArchiveRecord />} />
-            <Route path="/archive/:id" element={<ArchiveDetail />} />
-           */warad*/
-            {/* <Route path="/wared" element={<WaredCreate />} />
-            <Route path="/tabwared" element={<DataTabWared />} />
-            {/* <Route path="/datawared" element={<DataTabWared />} /> */}
-            <Route path="/datawared/:id" element={<WaredRecDetail />} />*/
-            <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
-        <Route path="/tabwared" element={<DataTabWared records={records} />} />
-        <Route path="/datawared/:id" element={<WaredRecDetail />} />
-            <Route path="/archwared" element={<EditAndArchive />} /> 
-            <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
-    
-           </Route>
-           
-          </Routes>
-      
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route element={<Layout totalWaredRecords={totalWaredRecords} />}>
+          <Route path="/dashbored" element={<Dashboard />} />
+          <Route path="/create" element={<CreateRecord />} />
+          <Route path="/datatable" element={<DataTablee />} />
+          <Route path="/record/:id" element={<RecordDetail />} />
+          <Route path="/edit/:id" element={<EditRecord />} />
+          <Route path="/archive" element={<Archive />} />
+          <Route path="/add-archive" element={<AddArchiveRecord />} />
+          <Route path="/archive/:id" element={<ArchiveDetail />} />
+          
+          {/* تمرير totalWaredRecords إلى Sidebar */}
+          <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
+          <Route
+            path="/tabwared"
+            element={<DataTabWared records={records} setTotalWaredRecords={setTotalWaredRecords} />}
+          />
+          <Route path="/datawared/:id" element={<WaredRecDetail />} />
+          <Route path="/archwared" element={<EditAndArchive />} />
+          <Route path="/waredarchivedetail/:index" element={<WaredArchiveDetail />} />
+        </Route>
+      </Routes>
     </Router>
   );
 };
 
 export default App;
+
 
 
 // import React, { useState } from 'react';
