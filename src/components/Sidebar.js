@@ -130,7 +130,7 @@ const Sidebar = ({ totalWaredRecords, totalRecords, totalArchivedRecords }) => {
   </div>
 </Link>
 
-<Link to="/datatable" className={isActive('/datatable') || isActive('/record') || isActive('/edit') ? 'active' : ''}>
+<Link to="/outgoing" className={isActive('/outgoing') || isActive('/record') || isActive('/edit') ? 'active' : ''}>
   <div className="link-content">
     <span>عرض بيانات</span>
     <img src={fileupload} alt="Folder Icon" className="icon" />

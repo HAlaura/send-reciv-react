@@ -1,24 +1,22 @@
 /* Create Record Styles */
 .create-record {
 
- margin-top: 60px; /* ترك مسافة للهدر */
- margin-right: 250px; /* ترك مساحة للسايد بار */
- padding: 20px;
- flex-grow: 0; /* ليملأ المساحة المتبقية */
- background-color: #FFFFFF;
- border-radius: 8px;
- min-height: calc(75vh - 60px);
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- direction: rtl; /* محاذاة النص من اليمين */
- margin:  auto; /* للتوسيع التلقائي على اليمين واليسار */
- max-width: 1000px;
- margin-top: 40px; /* ترك مسافة من الهيدر */
+  margin-top: 60px; /* ترك مسافة للهدر */
+  margin-right: 250px; /* ترك مساحة للسايد بار */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px auot;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1000px;
+  direction: rtl; /* لجعل النص من اليمين إلى اليسار */
+  margin-top: 40px; /* ترك مسافة من الهيدر */
 }
 
 .form-row {
   display: flex; /* استخدام flexbox لتقسيم الحقول */
   justify-content: space-between; /* توزيع الحقول بالتساوي */
-  margin-bottom: 15px; /* مسافة بين الصفوف */
+  margin-bottom: 5px; /* مسافة بين الصفوف */
   width: 1000px;
 }
 
@@ -30,7 +28,7 @@
 .create-record h2 {
   text-align: right;
   color: #333;
-  margin-bottom: 20px;
+  
 }
 
 .create-record label {
@@ -53,7 +51,7 @@
 }
 .create-record select {
   width: 105%; /* استخدام عرض كامل للحقل */
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 20px; /* حواف دائرية */
   margin-bottom: 5px;
@@ -88,8 +86,8 @@
   cursor: pointer;
   font-size: 20px;
   transition: background-color 0.3s;
-  margin-top: 45px; /* ضبط المسافة من العناصر الأخرى */
-  margin-left:40px; /* دفع الزر لليمين */
+  margin-top: 20px; /* ضبط المسافة من العناصر الأخرى */
+  margin-left:20px; /* دفع الزر لليمين */
   margin-right: auto; /* توسيط الزر */
 }
 

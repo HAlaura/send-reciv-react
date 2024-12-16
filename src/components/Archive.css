@@ -11,9 +11,11 @@
   margin-top: 40px; /* ترك مسافة من الهيدر */
 }
 
-h2 {
+.archive-container h2 {
+  text-align:right;
+  color: #333;
   margin-bottom: 20px;
-  text-align: right; /* محاذاة العنوان لليمين */
+  direction: rtl; /* اتجاه النص من اليمين إلى اليسار */
 }
 
 .search-input {

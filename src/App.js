@@ -135,7 +135,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreateRecord from './components/CreateRecord';
-import DataTablee from './components/DataTablee';
+import OutGoing from './components/OutGoing';
 import RecordDetail from './components/RecordDetail';
 import EditRecord from './components/EditRecord';
 import Archive from './components/Archive';
@@ -143,7 +143,7 @@ import ArchiveDetail from './components/ArchiveDetail';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import WaredCreate from './components/WaredCreate';
-import DataTabWared from './components/DataTabWared';
+import InComing from './components/InComing';
 import AddArchiveRecord from './components/AddArchiveRecord';
 import './App.css';
 import WaredRecDetail from './components/WaredRecDetail';
@@ -166,7 +166,7 @@ const App = () => {
         <Route element={<Layout totalWaredRecords={totalWaredRecords} />}>
           <Route path="/dashbored" element={<Dashboard />} />
           <Route path="/create" element={<CreateRecord />} />
-          <Route path="/datatable" element={<DataTablee />} />
+          <Route path="/outgoing" element={<OutGoing />} />
           <Route path="/record/:id" element={<RecordDetail />} />
           <Route path="/edit/:id" element={<EditRecord />} />
           <Route path="/archive" element={<Archive />} />
@@ -177,7 +177,7 @@ const App = () => {
           <Route path="/wared" element={<WaredCreate addRecord={addRecord} />} />
           <Route
             path="/tabwared"
-            element={<DataTabWared records={records} setTotalWaredRecords={setTotalWaredRecords} />}
+            element={<InComing records={records} setTotalWaredRecords={setTotalWaredRecords} />}
           />
           <Route path="/datawared/:id" element={<WaredRecDetail />} />
           <Route path="/archwared" element={<EditAndArchive />} />

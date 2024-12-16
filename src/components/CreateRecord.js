@@ -977,7 +977,7 @@ const CreateRecord = () => {
   return (
     <form onSubmit={handleSubmit} className="create-record">
       {message && <div className="success-message">{message}</div>}
-      <h2>الصادر</h2>
+      <h2>إنشاء سجل الصادر</h2>
       <div className="form-row">
         <div className="form-group">
           <label>جهة الإرسال:</label>

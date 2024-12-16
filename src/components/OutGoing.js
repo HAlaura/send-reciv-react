@@ -616,9 +616,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Sidebar from './Sidebar'; // تأكد من استيراد Sidebar
-import './DataTablee.css';
+import './OutGoing.css';
 
-const DataTablee = () => {
+const OutGoing = () => {
   const [dataList, setDataList] = useState([]); // البيانات المعروضة حاليًا
   const [allRecords, setAllRecords] = useState([]); // جميع السجلات من الـ API
   const [searchTerm, setSearchTerm] = useState(''); // كلمة البحث
@@ -808,11 +808,11 @@ const DataTablee = () => {
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={currentPage === Math.ceil(dataList.length / recordsPerPage)}
         >
-          التالي
+        التالي
         </button>
       </div>
     </div>
   );
 };
 
-export default DataTablee;
+export default OutGoing;

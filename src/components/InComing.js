@@ -459,10 +459,10 @@
 // export default DataTabWared;
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './DataTablee.css';
+import './OutGoing.css';
 import Sidebar from './Sidebar';
 
-const DataTabWared = () => {
+const InComing = () => {
   const [records, setRecords] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -596,14 +596,14 @@ const DataTabWared = () => {
 
         <div className="pagination">
           <button onClick={handlePrevPage} disabled={currentPage === 1}>السابق</button>
-          <button onClick={handleNextPage} disabled={indexOfLastRecord >= filteredDataList.length}>اللاحق</button>
+          <button onClick={handleNextPage} disabled={indexOfLastRecord >= filteredDataList.length}> التالي </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default DataTabWared;
+export default InComing;
 
 
 // api
