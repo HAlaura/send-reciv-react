@@ -95,6 +95,174 @@
 // export default Login; // Change 'login' to 'Login'
 //swager
 
+// import React, { useState } from "react";
+// import './login.css';
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+// const Login = () => {
+//     const [username, setUsername] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [error, setError] = useState('');
+//     const navigate = useNavigate();
+
+//     const handleUsernameChange = (e) => {
+//         setUsername(e.target.value);
+//     }
+
+//     const handlePasswordChange = (e) => {
+//         setPassword(e.target.value);
+//     }
+
+//     const handleSubmit = async (event) => {
+//         event.preventDefault();
+
+//         try {
+//             const response = await axios.post(`https://mary.pythonanywhere.com/users/login/`, {
+//                 username: username,
+//                 password: password,
+//             });
+
+//             const user = response.data;
+//             console.log(user);
+//             if (user && user.access) {
+//                 localStorage.setItem('access_token', user.access);
+//                 localStorage.setItem('refresh_token', user.refresh);
+//                 navigate('/dashbored');
+//             } else {
+//                 setError('Invalid username or password');
+//             }
+//         } catch (error) {
+//             console.error('Login error:', error);
+//             setError('حدث خطأ أثناء تسجيل الدخول. يرجى التحقق من المعلومات.');
+//         }
+//     };
+
+//     return (
+//         <div className="login-container">
+//             <div className="login-form">
+//                 <form onSubmit={handleSubmit}>
+//                     <label className="login-sys">نظام الصادر والوارد</label>
+//                     <label className="login-msg">يرجى إدخال معلومات الحساب لاستخدام النظام</label>
+                    
+//                     <input
+//                         type="text"
+//                         placeholder="اسم المستخدم"
+//                         className="login-inputu"
+//                         value={username}
+//                         onChange={handleUsernameChange}
+//                         required
+//                     />
+                    
+//                     <input
+//                         type="password"
+//                         placeholder="كلمة المرور"
+//                         className="login-inputp"
+//                         value={password}
+//                         onChange={handlePasswordChange}
+//                         required
+//                     />
+                    
+//                     {error && <h6 className="error-message">{error}</h6>}
+                    
+//                     <button type="submit" className="login-button">تسجيل دخول</button>
+//                     <div className="link"><Link to="/dashbored">Sign Up</Link></div>
+//                 </form>
+//             </div>
+//             <div className="img">
+//                 <img src="../assets/login.png" alt="" />
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default Login;
+// import React, { useState } from "react";
+// import './login.css';
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+// const Login = () => {
+//     const [username, setUsername] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [error, setError] = useState('');
+//     const navigate = useNavigate();
+
+//     const handleUsernameChange = (e) => {
+//         setUsername(e.target.value);
+//     };
+
+//     const handlePasswordChange = (e) => {
+//         setPassword(e.target.value);
+//     };
+
+//     const handleSubmit = async (event) => {
+//         event.preventDefault();
+
+//         try {
+//             const response = await axios.post(`https://mary.pythonanywhere.com/users/login/`, {
+//                 username: username,
+//                 password: password,
+//             });
+
+//             const user = response.data;
+//             console.log(user);
+//             if (user && user.access) {
+//                 // تخزين الـ access token و refresh token واسم المستخدم
+//                 localStorage.setItem('access_token', user.access);
+//                 localStorage.setItem('refresh_token', user.refresh);
+//                 localStorage.setItem('username', username); // تخزين اسم المستخدم
+//                 navigate('/dashboard'); // الانتقال إلى صفحة لوحة التحكم
+//             } else {
+//                 setError('Invalid username or password');
+//             }
+//         } catch (error) {
+//             console.error('Login error:', error);
+//             setError('حدث خطأ أثناء تسجيل الدخول. يرجى التحقق من المعلومات.');
+//         }
+//     };
+
+//     return (
+//         <div className="login-container">
+//             <div className="login-form">
+//                 <form onSubmit={handleSubmit}>
+//                 <div> <label className="login-sys">نظام الصادر والوارد</label></div>
+//                 <div> <label className="login-msg">يرجى إدخال معلومات الحساب لاستخدام النظام</label></div>
+
+//                     <input
+//                         type="text"
+//                         placeholder="اسم المستخدم"
+//                         className="login-inputu"
+//                         value={username}
+//                         onChange={handleUsernameChange}
+//                         required
+//                     />
+
+//                     <input
+//                         type="password"
+//                         placeholder="كلمة المرور"
+//                         className="login-inputp"
+//                         value={password}
+//                         onChange={handlePasswordChange}
+//                         required
+//                     />
+
+//                     {error && <h6 className="error-message">{error}</h6>}
+
+//                     <button type="submit" className="login-button">تسجيل دخول</button>
+//                     <div className="link"><Link to="/signup">تسجيل حساب جديد</Link></div>
+//                 </form>
+//             </div>
+//             {/* <div className="img">
+//                 <img src="../aset/login.png" alt="Login" />
+//             </div> */}
+//         </div>
+//     );
+// }
+
+// export default Login;
 import React, { useState } from "react";
 import './login.css';
 import axios from "axios";
@@ -167,12 +335,12 @@ const Login = () => {
                     {error && <h6 className="error-message">{error}</h6>}
                     
                     <button type="submit" className="login-button">تسجيل دخول</button>
-                    <div className="link"><Link to="/dashbored">Sign Up</Link></div>
+                    <div className="link"><Link to="/dashbored"></Link></div>
                 </form>
             </div>
-            <div className="img">
+            {/* <div className="img">
                 <img src="../assets/login.png" alt="" />
-            </div>
+            </div> */}
         </div>
     );
 }

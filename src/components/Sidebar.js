@@ -130,9 +130,9 @@ const Sidebar = ({ totalWaredRecords, totalRecords, totalArchivedRecords }) => {
   </div>
 </Link>
 
-<Link to="/outgoing" className={isActive('/outgoing') || isActive('/record') || isActive('/edit') ? 'active' : ''}>
+<Link to="/outgoing" exact className={isActive('/outgoing') || isActive('/record') || isActive('/edit') ? 'active' : ''}>
   <div className="link-content">
-    <span>عرض بيانات</span>
+    <span>عرض بيانات الصادر</span>
     <img src={fileupload} alt="Folder Icon" className="icon" />
   </div>
   {totalRecords !== undefined && <span className="record-count"> ({totalRecords})</span>}
